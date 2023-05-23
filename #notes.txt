@@ -3,3 +3,7 @@
 74-2 Setup routes, layout and footer
 
 74-3 Create simple Top Banner react responsive carousel
+
+74-4 Use swiper JS to create a category Swiper
+
+https://swiperjs.com/demos#centered > npm install swiper

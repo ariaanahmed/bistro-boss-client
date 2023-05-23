@@ -17,7 +17,7 @@ const Banner = () => {
                 <img src={sliderImg2} />
             </div>
             <div>
-                <img src={sliderImg3}/>
+                <img src={sliderImg3} />
             </div>
             <div>
                 <img src={sliderImg4} />
@@ -26,7 +26,7 @@ const Banner = () => {
                 <img src={sliderImg5} />
             </div>
             <div>
-                <img src={sliderImg6}/>
+                <img src={sliderImg6} />
             </div>
         </Carousel>
     );
