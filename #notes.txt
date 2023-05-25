@@ -19,3 +19,5 @@ css parallax
 74-8 Create Parallax and Add Testimonials with react rating
 
 https://github.com/smastrom/react-rating
+
+75-2 Implement Cover With With Blur Parallax Using React Parallax
