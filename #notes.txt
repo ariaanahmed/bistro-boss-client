@@ -33,4 +33,26 @@ https://github.com/reactjs/react-tabs
 75-7 Select right tab based on the category
 
 75-8 Load menu data from server
-06:17
+
+75-9 Module summary and home work
+
+76-2 Setup Recaptcha And Validate Captcha
+
+76-3 Firebase Project Setup For Bistro Boss
+
+76-4 Setup Login Page And Auth Context
+
+76-5 Explore React Hook Form Validation, Error Handling
+https://formik.org/docs/overview
+
+https://react-hook-form.com/get-started
+
+76-6 Use Regex Validation In React Hook Form And Signup
+
+pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+
+76-7 Logout, Sweet Alert And Some Bug Fix
+
+76-8 Private Route And Redirect User After Login
+
+76-9 Module Summary And Update User Profile
