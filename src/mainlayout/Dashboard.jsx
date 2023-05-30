@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaCalendarAlt, FaHome, FaShoppingCart, FaWallet } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
-
+import useCart from '../hooks/useCart';
 
 const Dashboard = () => {
+    const [cart] = useCart()
     return (
         <div>
             <div className="drawer drawer-mobile">
@@ -21,7 +22,12 @@ const Dashboard = () => {
                         <li><NavLink to='/dashboard/home'> <FaHome /> User Home </NavLink></li>
                         <li><NavLink to='/dashboard/reservation'> <FaCalendarAlt /> Reservations </NavLink></li>
                         <li><NavLink to='/dashboard/history'> <FaWallet /> Payment History </NavLink></li>
-                        <li><NavLink to='/dashboard/mycart'> <FaShoppingCart /> My Cart </NavLink></li>
+                        <li>
+                            <NavLink to='/dashboard/mycart'> <FaShoppingCart /> My Cart
+                                <div className="badge badge-secondary">+{cart?.length || 0}</div>
+                            </NavLink>
+
+                        </li>
                         <div className="divider"></div>
                         {/* li*4>NavLink */}
                         <li><NavLink to='/'><FaHome /> Home</NavLink></li>

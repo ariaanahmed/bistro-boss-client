@@ -80,3 +80,5 @@ main.jsx > import { useQuery, useMutation, useQueryClient, QueryClient, QueryCli
 javascript array reduce to get total from objects
 
 77-8 Display cart items to review before order
+
+77-9 Delete cart item and sync data using refetch
