@@ -37,8 +37,8 @@ const Login = () => {
                     popup: 'animate__animated animate__fadeOutUp'
                 }
             })
-            
-            navigate(from, {replace: true})
+
+            navigate(from, { replace: true })
 
         }).catch((error) => {
             console.log(error.message)
@@ -71,7 +71,6 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-
                                 <input type="email" name="email" placeholder="Enter your email" className="input input-bordered" />
 
                             </div>
@@ -97,12 +96,12 @@ const Login = () => {
                                     <LoadCanvasTemplate />
                                 </label>
 
-                                <input onBlur={handleValidateCaptcha} type="text" name="captcha" required placeholder="Type the captcha above" className="input input-bordered" />
+                                <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="Type the captcha above" className="input input-bordered" />
                             </div>
 
-
+                            {/* TODO: make the captcha button enable from disabled */}
                             <div className="form-control mt-6">
-                                <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
+                                <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
                             </div>
                             <Link to="/signup">
                                 <p className='label-text-alt link link-hover text-md font-semibold'>Sign Up</p>
