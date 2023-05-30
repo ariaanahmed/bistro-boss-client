@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaCalendarAlt, FaHome, FaShoppingCart, FaWallet } from 'react-icons/fa';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 
 const Dashboard = () => {
@@ -16,17 +16,17 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+                    <ul className="menu p-4 w-80 bg-[#D1A054] text-base-content">
                         {/* <!-- Sidebar content here --> */}
-                        <li><Link> <FaHome /> User Home </Link></li>
-                        <li><Link> <FaCalendarAlt /> Reservations </Link></li>
-                        <li><Link> <FaWallet /> Payment History </Link></li>
-                        <li><Link> <FaShoppingCart /> My Cart </Link></li>
+                        <li><NavLink to='/dashboard/home'> <FaHome /> User Home </NavLink></li>
+                        <li><NavLink to='/dashboard/reservation'> <FaCalendarAlt /> Reservations </NavLink></li>
+                        <li><NavLink to='/dashboard/history'> <FaWallet /> Payment History </NavLink></li>
+                        <li><NavLink to='/dashboard/mycart'> <FaShoppingCart /> My Cart </NavLink></li>
                         <div className="divider"></div>
-                        {/* li*4>Link */}
-                        <li><Link to='/'><FaHome /> Home</Link></li>
-                        <li><Link to='/menu'>Our Menu</Link></li>
-                        <li><Link to='/order/salad'>Order Food</Link></li>
+                        {/* li*4>NavLink */}
+                        <li><NavLink to='/'><FaHome /> Home</NavLink></li>
+                        <li><NavLink to='/menu'>Our Menu</NavLink></li>
+                        <li><NavLink to='/order/salad'>Order Food</NavLink></li>
                     </ul>
 
                 </div>
