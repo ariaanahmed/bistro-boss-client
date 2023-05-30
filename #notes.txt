@@ -82,3 +82,9 @@ javascript array reduce to get total from objects
 77-8 Display cart items to review before order
 
 77-9 Delete cart item and sync data using refetch
+
+78-1 module Introduction and save user data
+
+78-2 Google Sign and when to save user info
+
+78-3 Save User if he doesnt exists in the database

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../shared/sociallogin/SocialLogin";
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -21,18 +22,28 @@ const SignUp = () => {
 
                 updateP(data.name, data.photoUrl)
                     .then(() => {
-                        console.log('user profile updated');
-                        reset();
-                        
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'User has been created',
-                            showConfirmButton: false,
-                            timer: 1500
+                        const saveUser = {name: data.name, email: data.email}
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
                         })
-                        navigate('/')
-
+                            .then((res) => res.json())
+                            .then((data) => {
+                                if (data.insertedId) {
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User has been created',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    navigate('/')
+                                }
+                            })
+                        reset();
                     }).catch((error) => {
                         console.log(error)
                     })
@@ -104,6 +115,7 @@ const SignUp = () => {
                             <Link to="/login">
                                 <p className="label-text-alt link link-hover text-md font-semibold">Login</p>
                             </Link>
+                            <SocialLogin/>
                         </form>
                     </div>
                 </div>
