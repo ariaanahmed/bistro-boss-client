@@ -98,3 +98,43 @@ javascript array reduce to get total from objects
 node > require('crypto').randomBytes(64).toString('hex')
 
 78-7 (Recap) Create a JWT token and save it on client side
+
+78-8 (Recap) Send JWT token to back end for verification
+
+78-9 (optional)(advanced) axios interceptor using chat gpt
+
+78-10 Limit the feature based on admin level
+
+78-11 (super advanced) Make user api secure and verify Admin
+
+Ar1@@##
+
+79-1 Why we use react-query, axios and react hook form
+
+79-2 Make Admin only link secure using AdminRoute
+
+79-3 Create Add item form using react hook form
+
+https://react-hook-form.com/form-builder
+
+import { useForm } from 'react-hook-form';
+
+79-4 where to store images with pros and cons
+
+79-5 Upload image to image hosting server imgbb and get image url
+
+step1. VITE_Image_Upload_Token=f731209693862ed316cecf5
+step2. const image_hosting_token=import.meta.env.VITE_Image_Upload_Token;
+step3. const img_hosting_url=`"https://api.imgbb.com/1/upload?expiration=600&key=${image_hosting_token}`
+
+79-6 Get image url and create save new item api
+
+google search - mdn fetch post image file
+
+79-7 Save new item to the server and make api secure
+
+79-7 Save new item to the server and make api secure
+
+79-8 Create Manage Items admin route and Load all menu items
+
+79-9 Delete menu item with VerifyAdmin middleware

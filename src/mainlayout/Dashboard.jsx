@@ -1,22 +1,25 @@
 import React from 'react';
-import { FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUser, FaUsers, FaUtensils, FaWallet } from 'react-icons/fa';
+import { FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUsers, FaUtensils, FaWallet } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import useCart from '../hooks/useCart';
+import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
     const [cart] = useCart()
 
     // TODO: load data from the server to have dynamic isAdmin based on data
-    const isAdmin = true;
+    // const isAdmin = true;
+
+    const [isAdmin] = useAdmin();
 
     return (
         <div>
             <div className="drawer drawer-mobile">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
+                <div className="drawer-content">
                     {/* Page content here  */}
-                    <Outlet />
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                    <Outlet />
 
                 </div>
                 <div className="drawer-side">
@@ -29,15 +32,14 @@ const Dashboard = () => {
                                 <>
                                     <li><NavLink to='/dashboard/home'> <FaHome /> Admin Home </NavLink></li>
 
-                                    <li><NavLink to='/dashboard/reservation'> <FaUtensils /> Add Items </NavLink></li>
+                                    <li><NavLink to='/dashboard/additem'> <FaUtensils /> Add an Item </NavLink></li>
 
-                                    <li><NavLink to='/dashboard/history'> <FaWallet /> Manage Items </NavLink></li>
+                                    <li><NavLink to='/dashboard/manageitems'> <FaWallet /> Manage Items </NavLink></li>
 
                                     <li><NavLink to='/dashboard/history'> <FaBook /> Manage Bookings</NavLink></li>
                                     
                                     <li><NavLink to='/dashboard/allusers'> <FaUsers /> All Users</NavLink></li>
 
-                                    
                                 </>
                                 :
                                 <>
