@@ -138,3 +138,97 @@ google search - mdn fetch post image file
 79-8 Create Manage Items admin route and Load all menu items
 
 79-9 Delete menu item with VerifyAdmin middleware
+
+
+80-1 Module Overview and Create Payment route
+
+80-2 Install stripe, stripe for react and create card element
+
+
+const getways = ["stripe", "bkash", "paypal", "commerz", "ssl"]
+getways[Math.floor(Math.random()*4)]
+
+stripe = https://github.com/stripe/react-stripe-js > npm install @stripe/react-stripe-js @stripe/stripe-js > https://github.com/stripe/react-stripe-js/blob/master/examples/hooks/0-Card-Minimal.js
+
+80-3 Create Stripe account and use publishable key
+https://dashboard.stripe.com/test/developers
+
+80-4 Use Test card and display card error
+steps: 1. install stripe and react stripe js
+2. create a check out with card element(card element contains: card number, expiration date, cvs, zip code. )
+3. create account on stripe and get the publishable key pk
+
+4. stripe test cards > https://stripe.com/docs/testing?testing-method=card-numbers#visa
+ 4000000000000002
+
+80-5 Server side payment intents API to get client Secret from stripe
+
+5. create a payment method
+6. use test card to test payment ---> https://stripe.com/docs/payments/quickstart --> https://stripe.com/docs/payments/quickstart?client=react&lang=node
+
+server side e eta install korte hobe -> npm install --save stripe
+
+stripe > dashboard > developers > pk and secret key
+
+copy the secret key from the bashboard and connect that with server side
+
+https://stripe.com/docs/api/payment_intents
+
+7. on the server side install stripe: npm install --save stripe
+8. create payment intent API with payment method types: ['card]
+9. make sure you provide amount in cents (multiply the price with 100)
+
+80-6 Get Price for payment intent and understand array reduce
+
+80-7 Use Confirm Card Payment to Process Payment
+
+https://stripe.com/docs/payments/accept-a-payment?platform=web&ui=elements
+
+stripe confirm card payment -> https://stripe.com/docs/js/payment_intents/confirm_card_payment
+
+ const {paymentIntent, error} = await stripe.confirmCardPayment(
+  '{PAYMENT_INTENT_CLIENT_SECRET}',
+  {
+    payment_method: {
+      card: cardElement,
+      billing_details: {
+        name: 'Jenny Rosen',
+      },
+    },
+  },
+);
+
+10. call the payment intent API to get client secret and store it in a state.
+11. use confirmCardPayment api with client secret card info
+
+80-8 Display payment error and success Message
+12. display confirm card error
+13. display confirm card success
+14. do thing after payment
+
+PAYMENT CHECK IN DASHBOARD - https://dashboard.stripe.com/test/payments
+
+80-8 Display payment error and success Message
+
+80-9 Create payment api and send payment data to the server
+
+80-10 Save payment info to the database
+
+81-1 Create different Dashboard Home page for User and Admin
+
+81-2 Create Admin dashboard stats api and load data
+
+81-3 Display stats on the admin home
+
+81-4 (Optional) high level overview of aggregate pipeline
+1. load all the payments
+2. for each payments get the menuitems array
+3. for each item in the menuitems array get the menuitem from the menu collection
+4. put them in an array: allOrderedItems
+5. separte the allOrderedItems by category using filter.
+6. now get the quantity by using length: pizzas.length
+7. for each category use reduce to get total amount spent on this category
+
+81-5 Display Dashboard charts
+
+

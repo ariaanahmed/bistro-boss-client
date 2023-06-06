@@ -30,7 +30,7 @@ const Dashboard = () => {
                             isAdmin
                                 ?
                                 <>
-                                    <li><NavLink to='/dashboard/home'> <FaHome /> Admin Home </NavLink></li>
+                                    <li><NavLink to='/dashboard/adminhome'> <FaHome /> Admin Home </NavLink></li>
 
                                     <li><NavLink to='/dashboard/additem'> <FaUtensils /> Add an Item </NavLink></li>
 
@@ -44,7 +44,7 @@ const Dashboard = () => {
                                 :
                                 <>
                                     {/* <!-- Sidebar user dboard here content here --> */}
-                                    <li><NavLink to='/dashboard/home'> <FaHome /> User Home </NavLink></li>
+                                    <li><NavLink to='/dashboard/userhome'> <FaHome /> User Home </NavLink></li>
                                     <li><NavLink to='/dashboard/reservation'> <FaCalendarAlt /> Reservations </NavLink></li>
                                     <li><NavLink to='/dashboard/history'> <FaWallet /> Payment History </NavLink></li>
                                     <li>
